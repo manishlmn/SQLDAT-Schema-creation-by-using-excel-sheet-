@@ -1,6 +1,6 @@
 # SQLDAT
 SQLDAT: SQL Files Development Automation Tool
-
+,CREATE TABLEs IN SQL USING EXCEL.
 
 Create DB tables, primary keys, foreign keys, default constrains from excel sheet as a input.  just we need to provide db objects information in the excel sheet and update  the configuration sheet as per our requirements. Just follow document as mentioned. Finally it will create on the go all db objects which is compatible to TFS check-ins.
 
@@ -12,5 +12,7 @@ For any application that require database. Initially we will create in excel bas
  
  To create this tool i used powerShell, T-Sql queries to generate files on the GO.
  
- 
+ This tool is more advance what it is mentioned in below blogs.
+ Link1: https://www.mssqltips.com/sqlservertip/1050/simple-way-to-create-tables-in-sql-server-using-excel/
+ Link2: http://devssolution.com/create-table-in-sql-using-excel/
  

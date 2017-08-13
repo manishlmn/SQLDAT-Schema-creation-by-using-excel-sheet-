@@ -1,4 +1,4 @@
-# SQLDAT
+# SQLDAT(Schema creation by using excel sheet)
 SQLDAT: SQL Files Development Automation Tool
 ,CREATE TABLEs IN SQL USING EXCEL.
 

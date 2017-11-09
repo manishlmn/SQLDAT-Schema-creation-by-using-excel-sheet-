@@ -1,5 +1,4 @@
 
-
 select 
 
  DB_NAME() AS [Database] 
@@ -19,7 +18,7 @@ select
  ,ISNULL((SELECT i.is_primary_key FROM sys.indexes AS i INNER JOIN sys.index_columns AS ic ON i.OBJECT_ID = ic.OBJECT_ID
           AND i.index_id = ic.index_id WHERE i.is_primary_key = 1 AND ic.OBJECT_ID= Ta.object_id AND ic.column_id=co.column_id ),0)
 		  AS [PrimaryKey]
- , ISNULL(DF.Name,'') AS [Default_Expression] 
+ , ISNULL(DF.definition,'') AS [Default_Expression] 
  ,ISNULL((select c.name from  sys.columns C where C.object_id =FKC.referenced_object_id AND c.column_id = FKC.referenced_column_id ),'')
    AS [ForeignKeyColumnName] 
 ,ISNULL(OBJECT_NAME(FKC.referenced_object_id),'') AS [ForeignKeyTable]
@@ -33,6 +32,7 @@ left join Sys.foreign_key_columns FKC on FKC.parent_object_id =ta.object_id
 and co.column_id =FKC.parent_column_id
 
 where Ta.name not like 'SYS%'
+order by Ta.name,Co.column_id asc
 
 --where Ta.name='FactInternetSales' --not like 'SYS%'
 
